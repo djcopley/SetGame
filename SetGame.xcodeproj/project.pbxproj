@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2C47CE2648EFCD002E79CD /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2C47CD2648EFCD002E79CD /* CardView.swift */; };
+		0A2C47D02648F17C002E79CD /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2C47CF2648F17C002E79CD /* CardColor.swift */; };
 		0A6AA045264329ED00E520F1 /* SetGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AA044264329ED00E520F1 /* SetGameApp.swift */; };
 		0A6AA047264329ED00E520F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AA046264329ED00E520F1 /* ContentView.swift */; };
 		0A6AA049264329F000E520F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6AA048264329F000E520F1 /* Assets.xcassets */; };
 		0A6AA04C264329F000E520F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6AA04B264329F000E520F1 /* Preview Assets.xcassets */; };
 		0A6AA057264329F000E520F1 /* SetGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AA056264329F000E520F1 /* SetGameTests.swift */; };
 		0A6AA062264329F000E520F1 /* SetGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AA061264329F000E520F1 /* SetGameUITests.swift */; };
+		0A6AA07026432A3000E520F1 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AA06F26432A3000E520F1 /* SetGame.swift */; };
+		0A6AA07226432B6200E520F1 /* ShapeSetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AA07126432B6200E520F1 /* ShapeSetGame.swift */; };
+		0A6AA07426432EFE00E520F1 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AA07326432EFE00E520F1 /* Grid.swift */; };
+		0A6AA07626432F0A00E520F1 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AA07526432F0A00E520F1 /* GridLayout.swift */; };
+		0A6AA07C2643359400E520F1 /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AA07B2643359400E520F1 /* Array+Identifiable.swift */; };
+		0A6AA07E2643405F00E520F1 /* CardShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AA07D2643405F00E520F1 /* CardShapes.swift */; };
+		0A6AA08226479FD100E520F1 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AA08126479FD100E520F1 /* Cardify.swift */; };
+		0A6AA0842648695B00E520F1 /* CardShading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AA0832648695B00E520F1 /* CardShading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A2C47CD2648EFCD002E79CD /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		0A2C47CF2648F17C002E79CD /* CardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardColor.swift; sourceTree = "<group>"; };
 		0A6AA041264329ED00E520F1 /* SetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A6AA044264329ED00E520F1 /* SetGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameApp.swift; sourceTree = "<group>"; };
 		0A6AA046264329ED00E520F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +57,14 @@
 		0A6AA05D264329F000E520F1 /* SetGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SetGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A6AA061264329F000E520F1 /* SetGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameUITests.swift; sourceTree = "<group>"; };
 		0A6AA063264329F000E520F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A6AA06F26432A3000E520F1 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
+		0A6AA07126432B6200E520F1 /* ShapeSetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeSetGame.swift; sourceTree = "<group>"; };
+		0A6AA07326432EFE00E520F1 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		0A6AA07526432F0A00E520F1 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		0A6AA07B2643359400E520F1 /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
+		0A6AA07D2643405F00E520F1 /* CardShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardShapes.swift; sourceTree = "<group>"; };
+		0A6AA08126479FD100E520F1 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
+		0A6AA0832648695B00E520F1 /* CardShading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardShading.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +92,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A2C47CC2648EF97002E79CD /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				0A2C47CD2648EFCD002E79CD /* CardView.swift */,
+				0A6AA08126479FD100E520F1 /* Cardify.swift */,
+				0A6AA07D2643405F00E520F1 /* CardShapes.swift */,
+				0A6AA0832648695B00E520F1 /* CardShading.swift */,
+				0A2C47CF2648F17C002E79CD /* CardColor.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
 		0A6AA038264329ED00E520F1 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +129,12 @@
 			children = (
 				0A6AA044264329ED00E520F1 /* SetGameApp.swift */,
 				0A6AA046264329ED00E520F1 /* ContentView.swift */,
+				0A6AA07126432B6200E520F1 /* ShapeSetGame.swift */,
+				0A6AA06F26432A3000E520F1 /* SetGame.swift */,
+				0A6AA07326432EFE00E520F1 /* Grid.swift */,
+				0A6AA07526432F0A00E520F1 /* GridLayout.swift */,
+				0A6AA07B2643359400E520F1 /* Array+Identifiable.swift */,
+				0A2C47CC2648EF97002E79CD /* Cards */,
 				0A6AA048264329F000E520F1 /* Assets.xcassets */,
 				0A6AA04D264329F000E520F1 /* Info.plist */,
 				0A6AA04A264329F000E520F1 /* Preview Content */,
@@ -260,6 +298,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A6AA047264329ED00E520F1 /* ContentView.swift in Sources */,
+				0A6AA07E2643405F00E520F1 /* CardShapes.swift in Sources */,
+				0A6AA07026432A3000E520F1 /* SetGame.swift in Sources */,
+				0A6AA08226479FD100E520F1 /* Cardify.swift in Sources */,
+				0A6AA07226432B6200E520F1 /* ShapeSetGame.swift in Sources */,
+				0A6AA07626432F0A00E520F1 /* GridLayout.swift in Sources */,
+				0A6AA0842648695B00E520F1 /* CardShading.swift in Sources */,
+				0A2C47D02648F17C002E79CD /* CardColor.swift in Sources */,
+				0A6AA07C2643359400E520F1 /* Array+Identifiable.swift in Sources */,
+				0A6AA07426432EFE00E520F1 /* Grid.swift in Sources */,
+				0A2C47CE2648EFCD002E79CD /* CardView.swift in Sources */,
 				0A6AA045264329ED00E520F1 /* SetGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
