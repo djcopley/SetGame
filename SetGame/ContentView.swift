@@ -13,11 +13,14 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            HStack {
+            VStack {
                 Text("Set!")
                     .font(.title)
+                Text("Sets Found: \(shapeSetGame.setsFound)")
             }
+            
             Divider()
+            
             Grid(shapeSetGame.cards) { card in
                 CardView(card: card)
                     .onTapGesture {
@@ -25,11 +28,19 @@ struct ContentView: View {
                     }
                     .padding()
             }
+            
             Divider()
+            
             Button(action: {
                 shapeSetGame.addThreeCards()
             }, label: { Text("Add Three Cards") })
             .font(.title)
+            
+            Spacer()
+            
+            Button(action: shapeSetGame.newSetGame, label: {
+                Text("New Game")
+            })
         }
     }
 }

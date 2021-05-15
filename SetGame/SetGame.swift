@@ -127,6 +127,8 @@ struct SetGame <CardShape: Equatable, CardShade: Equatable, CardColor: Equatable
         cardDeck[cardIndices.1].matched = true
         cardDeck[cardIndices.2].matched = true
         
+        print("Set Found!")
+        
         // Subtract three from the visible cards
         numberOfVisibleCards -= 3
     }
