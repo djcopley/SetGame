@@ -13,7 +13,7 @@ struct SetGame <CardShape: Equatable, CardShade: Equatable, CardColor: Equatable
     private(set) var setsFound: Int
     
     // Constants
-    let numberOfCards = 81
+    let numberOfCards = 12
     
     // Computed properties
     private var threeSelectedCards : (Card, Card, Card)? {
