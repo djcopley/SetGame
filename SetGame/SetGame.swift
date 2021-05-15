@@ -8,23 +8,38 @@
 import Foundation
 
 struct SetGame <CardShape, CardShade, CardColor> {
-    private(set) var cards: [Card]
-    
-    init(numCards: Int, cardFactory: (Int) -> Card) {
-        cards = [Card]()
-        for cardIndex in 0..<numCards {
-            cards.append(cardFactory(cardIndex))
+    private(set) var cardDeck: [Card]
+    private var numSelectedCards : Int {
+        var numSelected = 0
+        for card in cardDeck {
+            if card.selected {
+                numSelected += 1
+            }
         }
-        cards.shuffle()
+        return numSelected
+    }
+    
+    // Constants
+    let numberOfCards = 81
+    
+    init(cardFactory: (Int) -> Card) {
+        cardDeck = [Card]()
+        for cardIndex in 0..<numberOfCards {
+            cardDeck.append(cardFactory(cardIndex))
+        }
+//        cardDeck.shuffle()
     }
     
     mutating func choose (card: Card) {
-        if let chosenIndex = cards.firstIndex(matching: card) {
-            cards[chosenIndex].selected = !cards[chosenIndex].selected
+        if numSelectedCards == 3 {
+            
+        }
+        if let chosenIndex = cardDeck.firstIndex(matching: card) {
+            cardDeck[chosenIndex].selected = !cardDeck[chosenIndex].selected
         }
     }
     
-    func isASet() -> Bool {
+    private func isASet() -> Bool {
         return false
     }
     
@@ -35,5 +50,7 @@ struct SetGame <CardShape, CardShade, CardColor> {
         var color: CardColor
         var selected: Bool = false
         var id: Int
+        
+        
     }
 }

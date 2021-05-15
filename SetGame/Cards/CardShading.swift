@@ -14,7 +14,7 @@ enum CardShading {
 }
 
 extension Shape {
-    public func stripe(angle: Angle = Angle.degrees(90), gap: Int) -> some View {
+    public func stripe(angle: Angle = Angle.degrees(90), gap: Int = 1) -> some View {
         self.stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
     }
 }
