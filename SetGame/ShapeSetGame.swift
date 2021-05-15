@@ -56,11 +56,11 @@ class ShapeSetGame: ObservableObject {
     }
     
     init () {
-        setGame = SetGame(numberOfCards: numberOfCards, cardFactory: ShapeSetGame.setGameCardFactory)
+        setGame = SetGame(cardFactory: ShapeSetGame.setGameCardFactory)
     }
     
     func newSetGame() {
-        setGame = SetGame(numberOfCards: numberOfCards, cardFactory: ShapeSetGame.setGameCardFactory)
+        setGame = SetGame(cardFactory: ShapeSetGame.setGameCardFactory)
     }
     
     // MARK: Access to the Model

@@ -20,7 +20,7 @@ struct SetGame <CardShape, CardShade, CardColor> {
     }
     
     // Constants
-    let numberOfCards = 81
+    let numberOfCards = 12
     
     init(cardFactory: (Int) -> Card) {
         cardDeck = [Card]()
@@ -50,7 +50,5 @@ struct SetGame <CardShape, CardShade, CardColor> {
         var color: CardColor
         var selected: Bool = false
         var id: Int
-        
-        
     }
 }
