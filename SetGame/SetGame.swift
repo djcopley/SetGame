@@ -20,14 +20,14 @@ struct SetGame <CardShape, CardShade, CardColor> {
     }
     
     // Constants
-    let numberOfCards = 12
+    let numberOfCards = 24
     
     init(cardFactory: (Int) -> Card) {
         cardDeck = [Card]()
         for cardIndex in 0..<numberOfCards {
             cardDeck.append(cardFactory(cardIndex))
         }
-//        cardDeck.shuffle()
+        cardDeck.shuffle()
     }
     
     mutating func choose (card: Card) {

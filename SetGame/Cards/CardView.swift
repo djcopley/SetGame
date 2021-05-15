@@ -9,6 +9,17 @@ import SwiftUI
 
 struct CardView: View {
     var card: SetGame<CardShape, CardShading, CardColor>.Card
+    var stripeColor: UIColor
+    {
+        switch card.color {
+        case .red:
+            return .red
+        case .green:
+            return .green
+        case .purple:
+            return .purple
+        }
+    }
 
     var cardShape: some Shape {
         switch card.shape {
@@ -33,6 +44,7 @@ struct CardView: View {
         }
     }
     
+    
     var body: some View {
         VStack {
             ForEach(0..<card.count) { _ in
@@ -40,7 +52,16 @@ struct CardView: View {
                 case .solid:
                     cardShape.fill()
                 case .striped:
-                    cardShape.stripe()
+                    let angle: Double = 90
+                    let stripePattern = cardShape.stripe(colors:(stripeColor, .white), width:CGFloat(1), ratio:CGFloat(2.0))
+                    ZStack {
+                        cardShape.fill(ImagePaint(
+                                        image: Image(decorative: stripePattern, scale: 1.0)))
+                        cardShape.stroke()
+                        
+                    }
+                    
+                            
                 case .open:
                     cardShape.stroke()
                 }
