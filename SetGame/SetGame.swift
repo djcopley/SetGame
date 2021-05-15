@@ -57,7 +57,6 @@ struct SetGame <CardShape: Equatable, CardShade: Equatable, CardColor: Equatable
         
         if isASet() {
             setsFound += 1
-            numVisibleCards -= 3
         }
     }
     
