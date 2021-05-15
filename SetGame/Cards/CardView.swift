@@ -11,6 +11,9 @@ struct CardView: View {
     var card: SetGame<CardShape, CardShading, CardColor>.Card
         
     var body: some View {
+        let edgeFlyIn: Edge = .allCases.randomElement()!
+        let offsetValues: (CGFloat, CGFloat) = getXYOffset(edge: edgeFlyIn)
+        
         VStack {
             ForEach(0..<card.count) { _ in
                 let cardShape = card.shape.viewShape
@@ -29,7 +32,20 @@ struct CardView: View {
         }
         .foregroundColor(card.color.viewColor)
         .padding()
-        .cardify(selected: card.selected)
+        .cardify(selected: card.selected, animation: .easeInOut)
+        .transition(.move(edge: .allCases.randomElement()!).combined(with: .offset(x: offsetValues.0, y: offsetValues.1)))
+    }
+    
+    private func getXYOffset(edge: Edge) -> (CGFloat, CGFloat){
+        func getRand() -> CGFloat {
+            CGFloat(Int.random(in: -200...200))
+        }
+        switch edge {
+        case .top, .bottom:
+            return (getRand(), 0)
+        case .leading, .trailing:
+            return (0, getRand())
+        }
     }
     
     // MARK: Drawing Constants

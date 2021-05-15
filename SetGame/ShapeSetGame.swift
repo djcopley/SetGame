@@ -56,16 +56,19 @@ class ShapeSetGame: ObservableObject {
     }
     
     init () {
+        // Game is not ready until View fully loads
         setGame = SetGame(cardFactory: ShapeSetGame.setGameCardFactory)
     }
     
     func newSetGame() {
         setGame = SetGame(cardFactory: ShapeSetGame.setGameCardFactory)
+        gameReady()
     }
     
     // MARK: Access to the Model
     var cards: [SetGame<CardShape, CardShading, CardColor>.Card] {
         var arr = [SetGame<CardShape, CardShading, CardColor>.Card]()
+        
         var index = 0
         while arr.count < setGame.numberOfVisibleCards && index < setGame.cardDeck.count {
             if !setGame.cardDeck[index].matched {
@@ -87,5 +90,9 @@ class ShapeSetGame: ObservableObject {
     
     func addThreeCards() {
         setGame.addThreeCards()
+    }
+    
+    func gameReady() {
+        setGame.gameReady()
     }
 }

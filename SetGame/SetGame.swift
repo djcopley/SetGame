@@ -16,7 +16,7 @@ struct SetGame <CardShape: Equatable, CardShade: Equatable, CardColor: Equatable
     let numberOfCards = 81
     
     // MARK: Computed properties
-    private var numVisibleCards = 12
+    private var numVisibleCards = 0
     private(set) var numberOfVisibleCards: Int {
         get {
             return numVisibleCards
@@ -58,6 +58,10 @@ struct SetGame <CardShape: Equatable, CardShade: Equatable, CardColor: Equatable
         if isASet() {
             setsFound += 1
         }
+    }
+    
+    mutating func gameReady() {
+        numberOfVisibleCards = 0
     }
     
     mutating func addThreeCards() {

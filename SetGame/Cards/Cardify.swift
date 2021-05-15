@@ -9,14 +9,18 @@ import SwiftUI
 
 struct Cardify: ViewModifier {
     var selected: Bool
+    var animation: Animation? = nil
     
     func body(content: Content) -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: cornerRadius)
                 .fill(Color.white)
+                .animation(animation)
                 .shadow(color: selected ? selectedColor : unselectedColor, radius: shadowRadius)
+                .animation(nil)
             content
         }
+        .animation(animation)
     }
     
     // MARK: Drawing Constants
@@ -27,7 +31,7 @@ struct Cardify: ViewModifier {
 }
 
 extension View {
-    func cardify(selected: Bool) -> some View {
-        modifier(Cardify(selected: selected))
+    func cardify(selected: Bool, animation: Animation? = nil) -> some View {
+        modifier(Cardify(selected: selected, animation: animation))
     }
 }

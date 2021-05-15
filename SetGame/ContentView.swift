@@ -24,23 +24,34 @@ struct ContentView: View {
             Grid(shapeSetGame.cards) { card in
                 CardView(card: card)
                     .onTapGesture {
-                        shapeSetGame.choose(card: card)
+                        withAnimation(.easeInOut) {
+                            shapeSetGame.choose(card: card)
+                        }
                     }
                     .padding()
             }
-            
+
             Divider()
             
             Button(action: {
-                shapeSetGame.addThreeCards()
+                withAnimation(.easeInOut) {
+                    shapeSetGame.addThreeCards()
+                }
             }, label: { Text("Add Three Cards") })
             .font(.title)
             
             Spacer()
             
-            Button(action: shapeSetGame.newSetGame, label: {
+            Button(action: {
+                withAnimation(.easeInOut) {
+                    shapeSetGame.newSetGame()
+                }
+            }, label: {
                 Text("New Game")
             })
+        }
+        .onAppear {
+            shapeSetGame.gameReady()
         }
     }
 }
