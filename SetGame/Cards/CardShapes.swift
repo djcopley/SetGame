@@ -13,6 +13,7 @@ enum CardShape {
     case oval
 }
 
+
 struct AnyShape: Shape {
     private let builder: (CGRect) -> Path
 

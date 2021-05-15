@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var shapeSetGame: ShapeSetGame
     
+    
     var body: some View {
         VStack {
             HStack {
