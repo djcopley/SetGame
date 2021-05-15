@@ -68,8 +68,12 @@ class ShapeSetGame: ObservableObject {
         return setGame.cardDeck
     }
     
+    var setsFound: Int {
+        return setGame.setsFound
+    }
+    
     // MARK: Intents
     func choose(card: SetGame<CardShape, CardShading, CardColor>.Card) {
         setGame.choose(card: card)
-    }
+    } 
 }
