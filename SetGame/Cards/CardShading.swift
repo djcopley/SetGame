@@ -15,6 +15,7 @@ enum CardShading {
 }
 
 extension Shape {
+    // I cannot figure out how to make this modifer obey the .foregroundColor modifier
     public func stripe(_ fgcolor: Color, width: CGFloat = 1.0, ratio: CGFloat = 4.5) -> some View {
         let filter = CIFilter.stripesGenerator()
         filter.color0 = .clear

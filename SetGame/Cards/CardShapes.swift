@@ -13,6 +13,18 @@ enum CardShape {
     case oval
 }
 
+extension CardShape {
+    var viewShape: some Shape {
+        switch self {
+        case .diamond:
+            return AnyShape(Diamond())
+        case .squiggle:
+            return AnyShape(Squiggle())
+        case .oval:
+            return AnyShape(Oval())
+        }
+    }
+}
 
 struct AnyShape: Shape {
     private let builder: (CGRect) -> Path

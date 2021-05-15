@@ -12,3 +12,16 @@ enum CardColor {
     case green
     case purple
 }
+
+extension CardColor {
+    var viewColor: Color {
+        switch self {
+        case .red:
+            return Color.red
+        case .green:
+            return Color.green
+        case .purple:
+            return Color.purple
+        }
+    }
+}

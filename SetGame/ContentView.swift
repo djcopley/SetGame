@@ -17,6 +17,7 @@ struct ContentView: View {
                 Text("Set!")
                     .font(.title)
             }
+            Divider()
             Grid(shapeSetGame.cards) { card in
                 CardView(card: card)
                     .onTapGesture {
@@ -24,6 +25,11 @@ struct ContentView: View {
                     }
                     .padding()
             }
+            Divider()
+            Button(action: {
+                shapeSetGame.addThreeCards()
+            }, label: { Text("Add Three Cards") })
+            .font(.title)
         }
     }
 }

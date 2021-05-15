@@ -65,7 +65,15 @@ class ShapeSetGame: ObservableObject {
     
     // MARK: Access to the Model
     var cards: [SetGame<CardShape, CardShading, CardColor>.Card] {
-        return setGame.cardDeck
+        var arr = [SetGame<CardShape, CardShading, CardColor>.Card]()
+        var index = 0
+        while arr.count < setGame.numberOfVisibleCards && index < setGame.cardDeck.count {
+            if !setGame.cardDeck[index].matched {
+                arr.append(setGame.cardDeck[index])
+            }
+            index += 1
+        }
+        return arr
     }
     
     var setsFound: Int {
@@ -75,5 +83,9 @@ class ShapeSetGame: ObservableObject {
     // MARK: Intents
     func choose(card: SetGame<CardShape, CardShading, CardColor>.Card) {
         setGame.choose(card: card)
-    } 
+    }
+    
+    func addThreeCards() {
+        setGame.addThreeCards()
+    }
 }
