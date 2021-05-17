@@ -10,7 +10,9 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var shapeSetGame: ShapeSetGame
     
-    private let bannerAnimationTime: Double = 0.25 // Display banner for two seconds
+    // Animate banner for a quarter of a second
+    private let bannerAnimationTime: Double = 0.25
+    // Display banner for two seconds
     private let bannerDisplayTime: Double = 2
     
     @State private var showBanner: Bool = false
