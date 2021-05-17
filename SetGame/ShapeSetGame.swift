@@ -83,6 +83,14 @@ class ShapeSetGame: ObservableObject {
         return setGame.setsFound
     }
     
+    var lastSetAMatch: Bool {
+        return setGame.lastSetAMatch
+    }
+    
+    var threeCardsSelectedFlag: Bool {
+        return setGame.threeCardsSelectedFlag
+    }
+    
     // MARK: Intents
     func choose(card: SetGame<CardShape, CardShading, CardColor>.Card) {
         setGame.choose(card: card)

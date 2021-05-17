@@ -23,6 +23,7 @@
 		0A6AA07E2643405F00E520F1 /* CardShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AA07D2643405F00E520F1 /* CardShapes.swift */; };
 		0A6AA08226479FD100E520F1 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AA08126479FD100E520F1 /* Cardify.swift */; };
 		0A6AA0842648695B00E520F1 /* CardShading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6AA0832648695B00E520F1 /* CardShading.swift */; };
+		0AD0757E26508D650086718C /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD0757D26508D650086718C /* BannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		0A6AA07D2643405F00E520F1 /* CardShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardShapes.swift; sourceTree = "<group>"; };
 		0A6AA08126479FD100E520F1 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		0A6AA0832648695B00E520F1 /* CardShading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardShading.swift; sourceTree = "<group>"; };
+		0AD0757D26508D650086718C /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			children = (
 				0A6AA044264329ED00E520F1 /* SetGameApp.swift */,
 				0A6AA046264329ED00E520F1 /* ContentView.swift */,
+				0AD0757D26508D650086718C /* BannerView.swift */,
 				0A6AA07126432B6200E520F1 /* ShapeSetGame.swift */,
 				0A6AA06F26432A3000E520F1 /* SetGame.swift */,
 				0A6AA07326432EFE00E520F1 /* Grid.swift */,
@@ -308,6 +311,7 @@
 				0A6AA07C2643359400E520F1 /* Array+Identifiable.swift in Sources */,
 				0A6AA07426432EFE00E520F1 /* Grid.swift in Sources */,
 				0A2C47CE2648EFCD002E79CD /* CardView.swift in Sources */,
+				0AD0757E26508D650086718C /* BannerView.swift in Sources */,
 				0A6AA045264329ED00E520F1 /* SetGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

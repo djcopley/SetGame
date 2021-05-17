@@ -10,14 +10,47 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var shapeSetGame: ShapeSetGame
     
+    private let bannerAnimationTime: Double = 0.25 // Display banner for two seconds
+    private let bannerDisplayTime: Double = 2
+    
+    @State private var showBanner: Bool = false
+    
+    private func displayBanner() {
+        withAnimation(.linear(duration: bannerAnimationTime)) {
+            showBanner = true
+        }
+    }
+    
+    private func dismissBanner() {
+        withAnimation(.linear(duration: bannerAnimationTime)) {
+            showBanner = false
+        }
+    }
+    
+    private func delayedDismissBanner() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + bannerDisplayTime) {
+            dismissBanner()
+        }
+    }
     
     var body: some View {
         VStack {
-            VStack {
-                Text("Set!")
-                    .font(.title)
-                Text("Sets Found: \(shapeSetGame.setsFound)")
+            ZStack {
+                if showBanner {
+                    BannerView(success: shapeSetGame.lastSetAMatch)
+                        .onTapGesture {
+                            dismissBanner()
+                        }
+                        .onAppear(perform: delayedDismissBanner)
+                }
+                VStack {
+                    Text("Set!")
+                        .font(.title)
+                    Text("Sets Found: \(shapeSetGame.setsFound)")
+                }
+                .opacity(showBanner ? 0 : 1)
             }
+            
             
             Divider()
             
@@ -26,6 +59,11 @@ struct ContentView: View {
                     .onTapGesture {
                         withAnimation(.easeInOut) {
                             shapeSetGame.choose(card: card)
+                            if shapeSetGame.threeCardsSelectedFlag {
+                                displayBanner()
+                            } else {
+                                dismissBanner()
+                            }
                         }
                     }
                     .padding()
@@ -34,6 +72,7 @@ struct ContentView: View {
             Divider()
             
             Button(action: {
+                dismissBanner()
                 withAnimation(.easeInOut) {
                     shapeSetGame.addThreeCards()
                 }
@@ -43,6 +82,7 @@ struct ContentView: View {
             Spacer()
             
             Button(action: {
+                dismissBanner()
                 withAnimation(.easeInOut) {
                     shapeSetGame.newSetGame()
                 }

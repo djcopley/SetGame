@@ -11,6 +11,8 @@ struct SetGame <CardShape: Equatable, CardShade: Equatable, CardColor: Equatable
     // MARK: Initialized variables
     private(set) var cardDeck: [Card]
     private(set) var setsFound: Int
+
+    private(set) var lastSetAMatch: Bool = false
     
     // MARK: Constants
     let numberOfCards = 81
@@ -36,6 +38,10 @@ struct SetGame <CardShape: Equatable, CardShade: Equatable, CardColor: Equatable
         return numSelectedCards
     }
     
+    var threeCardsSelectedFlag: Bool {
+        return numberOfSelectedCards == 3
+    }
+        
     // MARK: Initializers
     init(cardFactory: (Int) -> Card) {
         cardDeck = [Card]()
@@ -55,8 +61,16 @@ struct SetGame <CardShape: Equatable, CardShade: Equatable, CardColor: Equatable
         // Program should crash if somehow a card not in the deck is chosen
         selectCard(cardIndex: cardDeck.firstIndex(matching: card)!)
         
-        if isASet() {
-            setsFound += 1
+        if let selectedCardIndices = getIndexOfSelectedCards() {
+            let card1 = cardDeck[selectedCardIndices.0]
+            let card2 = cardDeck[selectedCardIndices.1]
+            let card3 = cardDeck[selectedCardIndices.2]
+        
+            if isASet(card1: card1, card2: card2, card3: card3) {
+                setFound(cardIndices: selectedCardIndices)
+            } else {
+                lastSetAMatch = false
+            }
         }
     }
     
@@ -103,22 +117,14 @@ struct SetGame <CardShape: Equatable, CardShade: Equatable, CardColor: Equatable
         return result
     }
     
-    private mutating func isASet() -> Bool {
-        if let selectedCardIndices = getIndexOfSelectedCards() {
-            let card1 = cardDeck[selectedCardIndices.0]
-            let card2 = cardDeck[selectedCardIndices.1]
-            let card3 = cardDeck[selectedCardIndices.2]
-            
-            if allItemsSameOrDifferent(a: card1.count, b: card2.count, c: card3.count)
-                && allItemsSameOrDifferent(a: card1.shape, b: card2.shape, c: card3.shape)
-                && allItemsSameOrDifferent(a: card1.shading, b: card2.shading, c: card3.shading)
-                && allItemsSameOrDifferent(a: card1.color, b: card2.color, c: card3.color)
-            {
-                setFound(cardIndices: selectedCardIndices)
-                return true
-            }
+    private func isASet(card1: Card, card2: Card, card3: Card) -> Bool {
+        if allItemsSameOrDifferent(a: card1.count, b: card2.count, c: card3.count)
+            && allItemsSameOrDifferent(a: card1.shape, b: card2.shape, c: card3.shape)
+            && allItemsSameOrDifferent(a: card1.shading, b: card2.shading, c: card3.shading)
+            && allItemsSameOrDifferent(a: card1.color, b: card2.color, c: card3.color)
+        {
+            return true
         }
-        
         return false
     }
     
@@ -127,11 +133,14 @@ struct SetGame <CardShape: Equatable, CardShade: Equatable, CardColor: Equatable
     }
     
     mutating func setFound(cardIndices: (Int, Int, Int)) {
+        print("Set Found!")
+
         cardDeck[cardIndices.0].matched = true
         cardDeck[cardIndices.1].matched = true
         cardDeck[cardIndices.2].matched = true
         
-        print("Set Found!")
+        setsFound += 1
+        lastSetAMatch = true
         
         // Subtract three from the visible cards
         numberOfVisibleCards -= 3
