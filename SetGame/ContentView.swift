@@ -10,6 +10,9 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var shapeSetGame: ShapeSetGame
     
+    // Haptic feedback
+    private let haptic = UINotificationFeedbackGenerator()
+    
     // Animate banner for a quarter of a second
     private let bannerAnimationTime: Double = 0.25
     // Display banner for two seconds
@@ -18,6 +21,11 @@ struct ContentView: View {
     @State private var showBanner: Bool = false
     
     private func displayBanner() {
+        if shapeSetGame.lastSetAMatch {
+            haptic.notificationOccurred(.success)
+        } else {
+            haptic.notificationOccurred(.error)
+        }
         withAnimation(.linear(duration: bannerAnimationTime)) {
             showBanner = true
         }
