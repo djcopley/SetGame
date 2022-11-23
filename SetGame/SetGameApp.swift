@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct SetGameApp: App {
-    let game = ShapeSetGame()
+    @StateObject var game = ShapeSetGame()
     
     var body: some Scene {
         WindowGroup {
