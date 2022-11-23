@@ -1,4 +1,6 @@
 //
+//  Model
+//
 //  SetGame.swift
 //  SetGame
 //

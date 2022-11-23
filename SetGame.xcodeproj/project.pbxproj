@@ -130,14 +130,9 @@
 			isa = PBXGroup;
 			children = (
 				0A6AA044264329ED00E520F1 /* SetGameApp.swift */,
-				0A6AA046264329ED00E520F1 /* ContentView.swift */,
-				0AD0757D26508D650086718C /* BannerView.swift */,
-				0A6AA07126432B6200E520F1 /* ShapeSetGame.swift */,
-				0A6AA06F26432A3000E520F1 /* SetGame.swift */,
-				0A6AA07326432EFE00E520F1 /* Grid.swift */,
-				0A6AA07526432F0A00E520F1 /* GridLayout.swift */,
-				0A6AA07B2643359400E520F1 /* Array+Identifiable.swift */,
-				0A2C47CC2648EF97002E79CD /* Cards */,
+				0A8ADC23292DF11000B1D475 /* Views */,
+				0A8ADC24292DF12800B1D475 /* Model */,
+				0A8ADC25292DF14400B1D475 /* Extensions */,
 				0A6AA048264329F000E520F1 /* Assets.xcassets */,
 				0A6AA04D264329F000E520F1 /* Info.plist */,
 				0A6AA04A264329F000E520F1 /* Preview Content */,
@@ -169,6 +164,35 @@
 				0A6AA063264329F000E520F1 /* Info.plist */,
 			);
 			path = SetGameUITests;
+			sourceTree = "<group>";
+		};
+		0A8ADC23292DF11000B1D475 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A6AA046264329ED00E520F1 /* ContentView.swift */,
+				0AD0757D26508D650086718C /* BannerView.swift */,
+				0A6AA07326432EFE00E520F1 /* Grid.swift */,
+				0A6AA07526432F0A00E520F1 /* GridLayout.swift */,
+				0A2C47CC2648EF97002E79CD /* Cards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0A8ADC24292DF12800B1D475 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A6AA07126432B6200E520F1 /* ShapeSetGame.swift */,
+				0A6AA06F26432A3000E520F1 /* SetGame.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A8ADC25292DF14400B1D475 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0A6AA07B2643359400E520F1 /* Array+Identifiable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,13 +423,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -454,12 +479,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -475,12 +501,13 @@
 				DEVELOPMENT_TEAM = DR789XTL34;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SetGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.SetGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -499,12 +526,13 @@
 				DEVELOPMENT_TEAM = DR789XTL34;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SetGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.SetGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -520,7 +548,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DR789XTL34;
 				INFOPLIST_FILE = SetGameTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -542,7 +570,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DR789XTL34;
 				INFOPLIST_FILE = SetGameTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,4 +1,6 @@
 //
+//  ViewModel
+//
 //  DefaultSetGame.swift
 //  SetGame
 //
