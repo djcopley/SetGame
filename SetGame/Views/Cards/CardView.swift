@@ -15,7 +15,7 @@ struct CardView: View {
         let offsetValues: (CGFloat, CGFloat) = getXYOffset(edge: edgeFlyIn)
         
         VStack {
-            ForEach(0..<card.count) { _ in
+            ForEach(0..<card.count, id: \.self) { _ in
                 let cardShape = card.shape.viewShape
                 let cardColor = card.color.viewColor
                 

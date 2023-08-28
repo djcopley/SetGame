@@ -15,9 +15,8 @@ struct Cardify: ViewModifier {
         ZStack {
             RoundedRectangle(cornerRadius: cornerRadius)
                 .fill(Color.white)
-                .animation(animation)
                 .shadow(color: selected ? selectedColor : unselectedColor, radius: shadowRadius)
-                .animation(nil)
+                .animation(nil, value: selected)
             content
         }
         .animation(animation)

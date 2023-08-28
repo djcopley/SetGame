@@ -14,40 +14,48 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            Text("Found: \(shapeSetGame.setsFound)")
-                .font(.caption)
-                .foregroundStyle(.secondary)
-            
-            Grid(shapeSetGame.cards) { card in
-                CardView(card: card)
-                    .onTapGesture {
-                        withAnimation(.easeInOut) {
-                            shapeSetGame.choose(card: card)
+            VStack {
+                Grid(shapeSetGame.cards) { card in
+                    CardView(card: card)
+                        .onTapGesture {
+                            withAnimation(.easeInOut) {
+                                shapeSetGame.choose(card: card)
+                            }
                         }
-                    }
-                    .padding()
-            }
-            .onAppear { shapeSetGame.gameReady() }
-            .navigationTitle("Set!")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button("New Game") {
-                        withAnimation(.easeInOut) {
-                            shapeSetGame.newSetGame()
-                        }
-                    }
+                        .padding()
                 }
-                ToolbarItem(placement: .status) {
+                Group {
+                    Text("Sets Found: \(shapeSetGame.setsFound)")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .padding(.bottom, 10)
+
                     Button {
                         withAnimation(.easeInOut) {
                             shapeSetGame.addThreeCards()
                         }
                     } label: {
                         Text("Draw 3")
-                            .padding(.horizontal)
+                            .font(.title3)
+                            .padding(.vertical, 10)
+                            .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.borderedProminent)
+                }
+                .padding(.horizontal)
+
+            }
+            .onAppear { shapeSetGame.gameReady() }
+            .navigationTitle("Set!")
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        withAnimation(.easeInOut) {
+                            shapeSetGame.newSetGame()
+                        }
+                    } label: {
+                        Label("New Game", systemImage: "arrow.counterclockwise")
+                    }
                 }
             }
         }
